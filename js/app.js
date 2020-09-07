@@ -1,37 +1,43 @@
-// ********** set date ************
-// select span
-const date = (document.getElementById(
-  "date"
-).innerHTML = new Date().getFullYear());
+const navToggle = document.querySelector('.nav-toggle');
+const headerList = document.querySelector('.header-list');
+const header = document.querySelector('.header');
+const scrollLinks = document.querySelectorAll('.scroll-link');
+const headerHeight = header.getBoundingClientRect().height;
+const upScrollBtn = document.querySelector('.up-scroll-btn');
 
-// ********** nav toggle ************
-// select button and links
-const navBtn = document.getElementById("nav-toggle");
-const links = document.getElementById("nav-links");
-// add event listener
-navBtn.addEventListener("click", () => {
-  links.classList.toggle("show-links");
+navToggle.addEventListener('click', () => {
+  headerList.classList.toggle('header-list-open');
 });
 
-// ********** smooth scroll ************
-// select links
-const scrollLinks = document.querySelectorAll(".scroll-link");
-scrollLinks.forEach(link => {
-  link.addEventListener("click", e => {
-    // prevent default
+window.addEventListener('scroll', () => {
+  const scrollHeight = window.pageYOffset;
+  const scrollHeightBottom = window.page;
+  if (scrollHeight > headerHeight) {
+    header.style.position = 'fixed';
+  } else {
+    header.style.position = 'initial';
+  }
+  if (scrollHeight > 500) {
+    upScrollBtn.style.opacity = 1;
+  } else {
+    upScrollBtn.style.opacity = 0;
+  }
+});
+
+scrollLinks.forEach((link) => {
+  link.addEventListener('click', function (e) {
     e.preventDefault();
-    links.classList.remove("show-links");
-
-    const id = e.target.getAttribute("href").slice(1);
+    headerList.classList.remove('header-list-open');
+    const id = link.getAttribute('href').slice(1);
     const element = document.getElementById(id);
-    //
-    let position = element.offsetTop - 62;
-
+    let position = element.offsetTop - headerHeight - headerHeight;
+    if (header.style.position === 'fixed') {
+      position = element.offsetTop - headerHeight;
+    }
     window.scrollTo({
-      left: 0,
-      // top: element.offsetTop,
       top: position,
-      behavior: "smooth"
+      left: 0,
+      behavior: 'smooth',
     });
   });
 });
