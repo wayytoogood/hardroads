@@ -12,15 +12,18 @@ navToggle.addEventListener('click', () => {
 window.addEventListener('scroll', () => {
   const scrollHeight = window.pageYOffset;
   const scrollHeightBottom = window.page;
+  const width = window.innerWidth;
   if (scrollHeight > headerHeight) {
     header.style.position = 'fixed';
   } else {
     header.style.position = 'initial';
   }
-  if (scrollHeight > 500) {
-    upScrollBtn.style.opacity = 1;
-  } else {
-    upScrollBtn.style.opacity = 0;
+  if (width > 991) {
+    if (scrollHeight > 500) {
+      upScrollBtn.style.opacity = 1;
+    } else {
+      upScrollBtn.style.opacity = 0;
+    }
   }
 });
 
