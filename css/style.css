@@ -502,6 +502,7 @@ Services
     display: flex;
     flex-wrap: wrap;
     row-gap: 5rem;
+    -moz-column-gap: 3rem;
     column-gap: 3rem;
   }
   .service {
@@ -532,6 +533,7 @@ Services
     display: flex;
     text-align: left;
     align-items: flex-start;
+    -moz-column-gap: 2rem;
     column-gap: 2rem;
   }
   .service-icon-container {
@@ -565,6 +567,7 @@ Tours
 
 .tour .img-container img {
   height: 24rem;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -615,6 +618,7 @@ Tours
   .tours-center {
     display: flex;
     flex-wrap: wrap;
+    -moz-column-gap: 3rem;
     column-gap: 3rem;
   }
   .tour {
@@ -628,6 +632,7 @@ Tours
 
 @media all and (min-width: 1170px) {
   .tours-center {
+    -moz-column-gap: 4.5rem;
     column-gap: 4.5rem;
   }
   .tour {
@@ -672,6 +677,38 @@ Form
   border: none;
   font-size: 1.5rem;
   font-family: var(--ff-subtitle);
+  color: var(--clr-primary-3);
+}
+
+.form-submit input::-webkit-input-placeholder {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+  font-family: var(--ff-primary);
+  color: var(--clr-primary-3);
+}
+
+.form-submit input::-moz-placeholder {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+  font-family: var(--ff-primary);
+  color: var(--clr-primary-3);
+}
+
+.form-submit input:-ms-input-placeholder {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+  font-family: var(--ff-primary);
+  color: var(--clr-primary-3);
+}
+
+.form-submit input::-ms-input-placeholder {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+  font-family: var(--ff-primary);
   color: var(--clr-primary-3);
 }
 
@@ -778,6 +815,7 @@ Tour Images
 
 .tour-img img {
   height: 25rem;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -816,6 +854,7 @@ Footer
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
+  -moz-column-gap: 1.5rem;
   column-gap: 1.5rem;
   row-gap: 1rem;
 }
@@ -836,6 +875,7 @@ Footer
 }
 
 .social-links-footer {
+  -moz-column-gap: 2.5rem;
   column-gap: 2.5rem;
   margin: 1.5rem 0 3rem;
 }
@@ -873,10 +913,23 @@ Up Scroll Button
   height: 5.5rem;
   border-radius: var(--radius);
   background-color: #00b4d8;
+  -webkit-animation: pumpup 2s ease-in-out infinite;
   animation: pumpup 2s ease-in-out infinite;
   opacity: 0;
   transition: var(--transition);
   z-index: 100;
+}
+
+@-webkit-keyframes pumpup {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes pumpup {
