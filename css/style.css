@@ -820,6 +820,10 @@ Footer
   row-gap: 1rem;
 }
 
+.footer-list-item:hover {
+  padding-left: 0;
+}
+
 .footer-list-item a {
   font-family: var(--ff-title);
   font-weight: normal;
@@ -864,9 +868,9 @@ Up Scroll Button
   right: 10rem;
   bottom: 8rem;
   color: #eff7f6;
-  font-size: 4.5rem;
-  width: 6rem;
-  height: 6rem;
+  font-size: 3.75rem;
+  width: 5.5rem;
+  height: 5.5rem;
   border-radius: var(--radius);
   background-color: #00b4d8;
   animation: pumpup 2s ease-in-out infinite;
