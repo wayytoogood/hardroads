@@ -854,9 +854,11 @@ Footer
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
-  -moz-column-gap: 1.5rem;
-  column-gap: 1.5rem;
-  row-gap: 1rem;
+  justify-content: center;
+}
+.footer-nav li {
+  margin-left: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-list-item:hover {
