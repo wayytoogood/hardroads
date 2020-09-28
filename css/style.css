@@ -249,9 +249,6 @@ Navbar
 */
 .header {
   display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
   justify-content: center;
   background: var(--color-white);
   width: 100%;
@@ -358,7 +355,7 @@ Hero
 
 .hero {
   /* margin-top: 7.5rem; */
-  height: calc(100vh - 7.5rem);
+  height: calc(100vh - 8.55rem);
   display: flex;
   justify-content: center;
   align-items: center;
